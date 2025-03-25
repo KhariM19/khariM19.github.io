@@ -77,12 +77,12 @@
 			turn it around! 
 			*/
 			function update() {
-				postionX = postionX + speed;
-				moveBoxTo(postionX);
-				if (postionX > boardWidth) {
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
+				if (positionX > boardWidth) {
 					speed = speed * -1
 				}
-				else if (postionX < 0) {
+				else if (positionX < 0) {
 					speed = speed * -1
 				}
 
@@ -95,12 +95,16 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				postionX = 0;
+				positionX = 0;
 				points = points + 1;
-				chageBoxText(points);
+				changeBoxText(points);
 				if (speed > 0) {
+					speed = speed + 3;
+				}
+				else if (speed < 0) {
 					speed = speed -3;
 				}
+
 
 
 			};
